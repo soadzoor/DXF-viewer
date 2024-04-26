@@ -1,0 +1,51 @@
+{
+  "name": "3dworld",
+  "version": "0.0.1",
+  "description": "3D World",
+  "main": "",
+  "directories": {
+    "doc": "docs"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node build/start",
+    "build:dev": "node build/build",
+    "build:prod": "node build/build --prod",
+    "eslint:report": "eslint --ext .js,.jsx,.ts,.tsx src --report-unused-disable-directives --max-warnings 0 --cache",
+    "eslint:fix": "npm run eslint:report -- --fix",
+    "install git hooks": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "bash -c tsc -p tsconfig.json",
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "three": "0.164.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.7",
+    "@types/three": "0.163.0",
+    "@typescript-eslint/eslint-plugin": "7.7.1",
+    "esbuild": "0.20.2",
+    "eslint": "9.1.1",
+    "eslint-import-resolver-typescript": "3.6.1",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-unused-imports": "3.1.0",
+    "husky": "9.0.11",
+    "lint-staged": "15.2.2",
+    "sass": "1.75.0",
+    "shx": "0.3.4",
+    "tslib": "2.6.2",
+    "typescript": "5.4.5",
+    "uglifycss": "0.0.29",
+    "vite": "5.2.10"
+  }
+}
